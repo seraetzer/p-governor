@@ -1,0 +1,14 @@
+[package]
+authors = ["Sebastian Rätzer"]
+edition = "2018"
+name = "pwm_output"
+version = "0.1.0"
+
+[dependencies]
+aux8 = { path = "auxiliary" }
+pwm = { path = "pwm" }
+gpio = { path = "gpio" }
+timer = {path = "timer" }
+
+[profile.release]
+debug=true

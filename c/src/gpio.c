@@ -1,0 +1,20 @@
+#include "main.h"
+
+void init_gpio(void)
+{
+  RCC->AHBENR = RCC_AHBENR_GPIOEEN | RCC_AHBENR_GPIOAEN;
+  GPIOE->MODER = GPIO_MODER_MODER8_0 | GPIO_MODER_MODER9_0 | GPIO_MODER_MODER10_0 | GPIO_MODER_MODER11_0 | GPIO_MODER_MODER12_0 | GPIO_MODER_MODER13_0 | GPIO_MODER_MODER14_0 | GPIO_MODER_MODER15_0;
+  GPIOA->MODER = GPIO_MODER_MODER1_1;
+  GPIOA->AFR[1] = 0;
+  GPIOA->AFR[0] = (1<<4);
+}
+
+unsigned short read_pin2(void)
+{
+    return GPIOA->IDR & GPIO_IDR_2;
+}
+
+unsigned short read_pin0(void)
+{
+    return GPIOA->IDR & GPIO_IDR_0;
+}

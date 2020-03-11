@@ -1,0 +1,8 @@
+[package]
+authors = ["Sebastian Rätzer"]
+edition = "2018"
+name = "pwm"
+version = "0.1.0"
+
+[dependencies]
+aux8 = { path = "../auxiliary" }
